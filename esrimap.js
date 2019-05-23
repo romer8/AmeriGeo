@@ -8,16 +8,16 @@ require([
     basemap: "hybrid"
   });
   
-function zoom_to_region() {
-  var region = document.getElementById("mySelect").options;
-  if (region = "costarica") {
-      var view = new MapView({
-      container: "viewDiv",
-      map: map,
-      center: [-87, 13],
-      zoom: 8
+
+var region = document.getElementById("mySelect").options;
+if (region = "costarica") {
+    var view = new MapView({
+    container: "viewDiv",
+    map: map,
+    center: [-87, 13],
+    zoom: 8
   });
- 
+
   alert("Region = " + region);
 }  
   
