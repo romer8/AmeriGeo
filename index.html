@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Snowpack Viewer</title>
+<h1> Snowpack Viewer </h1>
+<p text-align: center> Jason Biesinger
+<br> 2/12/2018 </p>
+
+<h2>Select a region to view:</h2>
+  
+  <select>
+    <option value="utah">Utah County</option>
+    <option value="slc">Salt Lake County</option>
+    <option value="davis">Davis County</option>
+</select>
+
+<style>
+body{background-color: lightblue}
+p{text-align: center;color: black;}
+h1{text-align: center;color: black;}
+  html, body, #viewDiv {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+</style>
+  
+    
+  <link rel="stylesheet" href="https://js.arcgis.com/4.6/esri/css/main.css">
+<script src="https://js.arcgis.com/4.6/"></script>
+    
+<script>
+require([
+  "esri/Map",
+  "esri/layers/MapImageLayer",
+  "esri/views/MapView",
+  "dojo/domReady!"
+], function(Map, MapImageLayer, MapView) {
+  var map = new Map({
+    basemap: "hybrid"
+  });
+  var Snotel_Network = new MapImageLayer({
+  	url: "http://geoserver2.byu.edu/arcgis/rest/services/The_Snowmen/Snotel_Network/MapServer"
+  });
+  var Utah_Counties = new MapImageLayer({
+  	url: "http://geoserver2.byu.edu/arcgis/rest/services/The_Snowmen/Utah_Counties/MapServer"
+  });
+  var Utah_DEM = new MapImageLayer({
+  	url: "http://geoserver2.byu.edu/arcgis/rest/services/The_Snowmen/Utah_DEM/MapServer"
+  });
+  var Utah_State = new MapImageLayer({
+  	url: "http://geoserver2.byu.edu/arcgis/rest/services/The_Snowmen/Utah_State/MapServer"
+  });
+    
+map.layers.add(Snotel_Network);
+map.layers.add(Utah_Counties);
+map.layers.add(Utah_DEM);
+map.layers.add(Utah_State);
+
+  var view = new MapView({
+      container: "viewDiv",
+      map: map,
+      center: [-111.1, 39.1],
+      zoom: 6
+  });
+});
+
+</script>
+
+</head>
+  
+  
+  
+<body> 
+  <div id="viewDiv"></div> 
+</body>
+</html>
