@@ -6,8 +6,16 @@ require([
 ], function(Map, MapView) {
   var map = new Map({
     basemap: "hybrid"
-    
-    	let lat_list = [ 
+  });
+
+  var view = new MapView({
+      container: "viewDiv",
+      map: map,
+      center: [-87, 13],
+      zoom: 5
+  });	
+  
+	let lat_list = [ 
 		18.588025,
 		-0.741182, 
 		-40.929923, 
@@ -89,15 +97,11 @@ require([
 			popupTemplate: {
 				title: name_list[i],
 				content: content_list[i]	
-			}
+			}	
 		});
 	};
-    
-    
-});
-  
-  
-  
+	
+	
   
 function zoom_to_region() {
   var region = document.getElementById("choose_region").options;
@@ -116,13 +120,5 @@ function zoom_to_region() {
   
 
   
-  
-  var view = new MapView({
-      container: "viewDiv",
-      map: map,
-      center: [-87, 13],
-      zoom: 5
-  });
+
 });
-
-
