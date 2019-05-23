@@ -13,7 +13,7 @@
 <h1> Using an API </h1>
 <p text-align: center> Click on a stream to call the API.</p>
 
-<h2>Select a region to view:</h2>
+<p>Select a region to view:</p>
   
   <select id="mySelect">
     <option value="guatemala">Guatelama</option>
@@ -27,7 +27,8 @@
 
 <button type="button" id="choose_region">Go to Region</button>
 <style>
-document.getElementById("choose_region").addEventListener("click", zoom_to_region);     
+document.getElementById("choose_region").addEventListener("click", zoom_to_region);  
+$(document).on('click', , '#mySelect', zoom_to_region);                                                                       
 </style>
 </head>
   
