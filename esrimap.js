@@ -9,7 +9,7 @@ require([
   });
   
 function zoom_to_region() {
-  var region = document.getElementById("mySelect").options;
+  var region = document.getElementById("choose_region").options;
   if (region = "costarica") {
       var view = new MapView({
       container: "viewDiv",
@@ -29,7 +29,6 @@ function zoom_to_region() {
     
 map.layers.add(Utah_Counties);
   
-$(document).on('click', '#mySelect', zoom_to_region);
   
   var view = new MapView({
       container: "viewDiv",
