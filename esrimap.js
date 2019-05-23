@@ -7,6 +7,7 @@ require([
   var map = new Map({
     basemap: "hybrid"
   });
+  
   var Snotel_Network = new MapImageLayer({
   	url: "http://geoserver2.byu.edu/arcgis/rest/services/The_Snowmen/Snotel_Network/MapServer"
   });
