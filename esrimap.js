@@ -22,16 +22,11 @@ function zoom_to_region() {
   }  
 };
   
-  var Snotel_Network = new MapImageLayer({
-  	url: "http://geoserver2.byu.edu/arcgis/rest/services/The_Snowmen/Snotel_Network/MapServer"
-  });
+  
   var Utah_Counties = new MapImageLayer({
   	url: "http://geoserver2.byu.edu/arcgis/rest/services/The_Snowmen/Utah_Counties/MapServer"
   });
     
-  
-  
-map.layers.add(Snotel_Network);
 map.layers.add(Utah_Counties);
 
   
