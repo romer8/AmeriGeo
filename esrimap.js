@@ -3,7 +3,7 @@ require([
   "esri/views/MapView",
 ], function(Map, MapView) {
   var map = new Map({
-    basemap: "hybrid"
+    basemap: "osm"
   });
 
   var view = new MapView({
