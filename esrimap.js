@@ -38,4 +38,5 @@ map.layers.add(Utah_Counties);
   });
 });
 
-$(document).on('click', '#choose_region', zoom_to_region)
+/*$(document).on('click', '#choose_region', zoom_to_region)*/
+document.getElementById("choose_region").addEventListener("click", zoom_to_region);
