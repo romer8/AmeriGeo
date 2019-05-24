@@ -86,17 +86,17 @@ require([
           center: [-87, 13],
           zoom: 8
         });
-      } elseif (region = "belize") {
+      } else if (region = "belize") {
       
-      } elseif (region = "elsalvador") {
+      } else if (region = "elsalvador") {
 	      
-      } elseif (region = "honduras") {
+      } else if (region = "honduras") {
 	      
-      } elseif (region = "nicaragua") {
+      } else if (region = "nicaragua") {
 	      
-      } elseif (region = "costarica") {
+      } else if (region = "costarica") {
 	      
-      } elseif (region = "panama") {
+      } else if (region = "panama") {
 	      
       }
     };	
