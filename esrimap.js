@@ -13,7 +13,7 @@ require([
       zoom: 5
   });	
   
- `$("#choose_region").on('click', function()`{
+ $("#choose_region").on('click', function(){
  let region = document.getElementById("mySelect").value;
  console.log(region)
  var zoomLat = 14.414071;
