@@ -75,24 +75,34 @@ require([
 		});
 	};
 	
-	
-  
-
-});
-
     function ZoomToRegion() {
       let region = document.getElementById("mySelect").value;
-      if (region = "costarica") {
+      if (region = "guatemala") {
 	  console.log(region)
+	      
           var view = new MapView({
           container: "viewDiv",
           map: map,
           center: [-87, 13],
           zoom: 8
         });
-
-        alert("Region = " + region);
+      } elseif (region = "belize") {
+      
+      } elseif (region = "elsalvador") {
+	      
+      } elseif (region = "honduras") {
+	      
+      } elseif (region = "nicaragua") {
+	      
+      } elseif (region = "costarica") {
+	      
+      } elseif (region = "panama") {
+	      
       }
-    };
+    };	
+
+});
+
+
 
 
