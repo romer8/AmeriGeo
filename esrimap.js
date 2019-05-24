@@ -35,7 +35,7 @@ require([
 	];
 	
 	let content_list = [
-		"Download the Forecast: https://tethys.byu.edu/apps/streamflow-prediction-tool/api/GetForecast/?watershed_name=central_america&subbasin_name=merit&reach_id=927466&forecast_folder=most_recent&return_format=csv"
+		"Download the Forecast: https://tethys.byu.edu/apps/streamflow-prediction-tool/api/GetForecast/?watershed_name=central_america&subbasin_name=merit&reach_id=927466&forecast_folder=most_recent&return_format=csv" +
 		"Download the Historical Data: https://tethys.byu.edu/apps/streamflow-prediction-tool/api/GetHistoricalData/?watershed_name=central_america&subbasin_name=merit&reach_id=927466&return_format=csv",
 		"hi",
 		"what's up"
