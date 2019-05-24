@@ -1,3 +1,5 @@
+var choose_region;
+
 require([
   "esri/Map",
   "esri/views/MapView",
