@@ -16,19 +16,22 @@ require([
 	let lat_list = [ 
 		14.414071,
 		14.803385, 
-		9.122188
+		9.122188,
+		10.931301
 	];
 	
 	let lon_list = [ 
 		-91.182087,
 		-84.788530,
-		-79.068260				
+		-79.068260,
+		-84.330854
 	];
 	
 	let name_list = [
 		"Rio Madre Vieja", 
 		"Rio Coco", 
-		"Rio Chepo"
+		"Rio Chepo",
+		"Rio San Juan"
 
 	];
 	
@@ -41,6 +44,10 @@ require([
 		
 		"Download the " + "<a href=https://tethys.byu.edu/apps/streamflow-prediction-tool/api/GetForecast/?watershed_name=central_america&subbasin_name=merit&reach_id=929355&forecast_folder=most_recent&return_format=csv>Forecast</a>" +
 		"<br>Download the " + "<a href=https://tethys.byu.edu/apps/streamflow-prediction-tool/api/GetHistoricData/?watershed_name=central_america&subbasin_name=merit&reach_id=929355&return_format=csv>Historic Data</a>",
+		
+		"Download the " + "<a href=https://tethys.byu.edu/apps/streamflow-prediction-tool/api/GetForecast/?watershed_name=central_america&subbasin_name=merit&reach_id=928849&forecast_folder=most_recent&return_format=csv>Forecast</a>" +
+		"<br>Download the " + "<a href=https://tethys.byu.edu/apps/streamflow-prediction-tool/api/GetHistoricData/?watershed_name=central_america&subbasin_name=merit&reach_id=928849&return_format=csv>Historic Data</a>",
+
 
 	]
 							
