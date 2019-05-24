@@ -74,9 +74,6 @@ require([
 			}	
 		});
 	};
-	
-	
-});
 
 function zoom_to_region() {
 	let region = document.getElementById("choose_region").options;
@@ -91,3 +88,7 @@ function zoom_to_region() {
 	alert("Region = " + region);
 	}
 };
+	
+});
+
+
