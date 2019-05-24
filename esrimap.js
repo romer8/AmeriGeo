@@ -81,7 +81,7 @@ require([
 });
 
     function ZoomToRegion() {
-      let region = document.getElementById("MySelect").value;
+      let region = document.getElementById("MySelect").options;
       if (region = "costarica") {
           var view = new MapView({
           container: "viewDiv",
