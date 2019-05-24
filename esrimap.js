@@ -75,6 +75,10 @@ require([
 		});
 	};
 	
+	
+
+});
+
     function ZoomToRegion() {
       let region = document.getElementById("mySelect").value;
       if (region = "guatemala") {
@@ -99,10 +103,6 @@ require([
       } else if (region = "panama") {
 	      
       }
-    };	
-
-});
-
-
+    };
 
 
