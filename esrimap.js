@@ -76,18 +76,18 @@ require([
 	};
 	
 	
-  
-    function zoom_to_region() {
-      let region = document.getElementById("choose_region").options;
-      if (region = "costarica") {
-          var view = new MapView({
-          container: "viewDiv",
-          map: map,
-          center: [-87, 13],
-          zoom: 8
-        });
-
-        alert("Region = " + region);
-      }
-    };
 });
+
+function zoom_to_region() {
+	let region = document.getElementById("choose_region").options;
+	if (region = "costarica") {
+	  var view = new MapView({
+	  container: "viewDiv",
+	  map: map,
+	  center: [-87, 13],
+	  zoom: 8
+	});
+
+	alert("Region = " + region);
+	}
+};
