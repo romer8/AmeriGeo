@@ -13,8 +13,8 @@ require([
       zoom: 5
   });	
   
- <script src="/lib/jquery.plugin.js"></script>
- <script src="/lib/jquery.min.js"></script>	
+ src="/lib/jquery.plugin.js"
+ src="/lib/jquery.min.js"	
 	
  $("#choose_region").on('click', function(){
  let region = document.getElementById("mySelect").value;
