@@ -97,7 +97,7 @@ require([
       let region = document.getElementById("mySelect").value;
       if (region = "guatemala") {
 	  console.log(region)
-	      
+
           var view = new MapView({
           container: "viewDiv",
           map: map,
@@ -105,17 +105,23 @@ require([
           zoom: 8
         });
       } else if (region = "belize") {
-      
+      console.log(region)
+
       } else if (region = "elsalvador") {
-	      
+      console.log(region)
+
       } else if (region = "honduras") {
-	      
+      console.log(region)
+
       } else if (region = "nicaragua") {
-	      
+      console.log(region)
+
       } else if (region = "costarica") {
-	      
+      console.log(region)
+
       } else if (region = "panama") {
-	      
+      console.log(region)
+
       }
     };
 
