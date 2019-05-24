@@ -14,55 +14,32 @@ require([
   });	
   
 	let lat_list = [ 
-		18.588025,
+		14.408741,
 		-0.741182, 
-		-40.929923, 
-		-25.690871, 
-		58.554978, 
-		45.976577, 
-		60.963107,
-		48.770959,
-		-17.925976,
-		38.891225	
+		-40.929923
+
 	];
 	
 	let lon_list = [ 
-		98.487056,
+		-91.247796,
 		-90.306385,
-		172.970942,
-		-54.440813,
-		-155.791548,
-		7.658461,
-		6.967813,
-		-121.298461,
-		25.857526,
-		-77.026066				
+		172.970942
+				
 	];
 	
 	let name_list = [
-		"Doi Inthanon National Park , Thailand", 
+		"Siguacan River near Guatemala City", 
 		"Galapagos Islands, Ecuador", 
-		"Abel Tasman National Park, New Zealand", 
-		"Iguazu Falls, Argentina", 
-		"Katmai National Park, AK", 
-		"Matterhorn, Switzerland", 
-		"Nærøyfjord Aurland, Norway", 
-		"North Cascades National Park, WA", 
-		"Victoria Falls, Zimbabwe", 
-		"Washington DC"
+		"Abel Tasman National Park, New Zealand"
+
 	];
 	
 	let content_list = [
-		"Hello",
+		"Download the Forecast: https://tethys.byu.edu/apps/streamflow-prediction-tool/api/GetForecast/?watershed_name=central_america&subbasin_name=merit&reach_id=927466&forecast_folder=most_recent&return_format=csv"
+		"Download the Historical Data: https://tethys.byu.edu/apps/streamflow-prediction-tool/api/GetHistoricalData/?watershed_name=central_america&subbasin_name=merit&reach_id=927466&return_format=csv",
 		"hi",
-		"what's up",
-		"Hola",
-		"Sup",
-		"Hi2",
-		"Que xopa",
-		"q tal",
-		"stuff",
-		"yikes"
+		"what's up"
+
 	]
 							
 	for(let i = 0; i < lon_list.length; i++){
