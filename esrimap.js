@@ -13,6 +13,15 @@ require([
       zoom: 5
   });	
   
+$("#choose_region").on('click', function(){
+ let region = document.getElementById("mySelect").value;
+ console.log(region)
+ var zoomLat = 14.414071;
+ var zoomLong = -91.182087;
+ var location = new Point(zoomLong,zoomLat);
+ map.centerAndZoom(location,16);	
+});	
+	
 	let lat_list = [ 
 		14.414071,
 		14.803385, 
