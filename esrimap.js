@@ -75,7 +75,7 @@ require([
 		});
 	};
 
-function zoom_to_region() {
+function ZoomToRegion() {
 	let region = document.getElementById("mySelect").options;
 	if (region = "costarica") {
 	  var view = new MapView({
