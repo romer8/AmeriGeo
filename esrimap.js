@@ -80,7 +80,7 @@ require([
 
 });
 
-    function zoom_to_region() {
+    function ZoomToRegion() {
       var region = document.getElementById("choose_region").options;
       if (region = "costarica") {
           var view = new MapView({
