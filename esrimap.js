@@ -14,29 +14,29 @@ require([
   });	
   
 	let lat_list = [ 
-		14.408741,
+		14.414071,
 		-0.741182, 
 		-40.929923
 
 	];
 	
 	let lon_list = [ 
-		-91.247796,
+		-91.182087,
 		-90.306385,
 		172.970942
 				
 	];
 	
 	let name_list = [
-		"Siguacan River near Guatemala City", 
+		"Rio Madre Vieja", 
 		"Galapagos Islands, Ecuador", 
 		"Abel Tasman National Park, New Zealand"
 
 	];
 	
 	let content_list = [
-		"Download the Forecast: https://tethys.byu.edu/apps/streamflow-prediction-tool/api/GetForecast/?watershed_name=central_america&subbasin_name=merit&reach_id=927466&forecast_folder=most_recent&return_format=csv" +
-		"Download the Historical Data: https://tethys.byu.edu/apps/streamflow-prediction-tool/api/GetHistoricalData/?watershed_name=central_america&subbasin_name=merit&reach_id=927466&return_format=csv",
+		"Download the " + "<a href=https://tethys.byu.edu/apps/streamflow-prediction-tool/api/GetForecast/?watershed_name=central_america&subbasin_name=merit&reach_id=927466&forecast_folder=most_recent&return_format=csv>Forecast</a>" +
+		"Download the " + "<a href=https://tethys.byu.edu/apps/streamflow-prediction-tool/api/GetHistoricalData/?watershed_name=central_america&subbasin_name=merit&reach_id=927466&return_format=csv>Historical Data</a>",
 		"hi",
 		"what's up"
 
