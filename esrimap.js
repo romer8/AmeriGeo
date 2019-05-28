@@ -46,7 +46,7 @@ require([
       		container: "viewDiv",
       		map: map,
       		center: [-89.18718, 13.68935],
-      		zoom: 7
+      		zoom: 9
   	  });	
 
       } else if (region == "honduras") {
