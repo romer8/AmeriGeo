@@ -22,7 +22,7 @@ require([
 	  onClick: function(){
       var region = document.getElementById("mySelect").value;
       console.log(region)
-      if (region = "guatemala1") {
+      if (region == "guatemala1") {
 	  console.log(region)
 	  var view = new MapView({
       		container: "viewDiv",
@@ -31,7 +31,7 @@ require([
       		zoom: 7
   	  });	    
 
-      } else if (region = "belize") {
+      } else if (region == "belize") {
       console.log(region)
 	  var view = new MapView({
       		container: "viewDiv",
@@ -40,7 +40,7 @@ require([
       		zoom: 7
   	  });	
 
-      } else if (region = "elsalvador") {
+      } else if (region == "elsalvador") {
       console.log(region)
 	  var view = new MapView({
       		container: "viewDiv",
@@ -49,7 +49,7 @@ require([
       		zoom: 7
   	  });	
 
-      } else if (region = "honduras") {
+      } else if (region == "honduras") {
       console.log(region)
 	  var zoomLat = 14.414071;
 	  var zoomLong = -91.182087;
@@ -61,7 +61,7 @@ require([
       		zoom: 7
   	  });	
 
-      } else if (region = "nicaragua") {
+      } else if (region == "nicaragua") {
       console.log(region)
 	  var zoomLat = 14.414071;
 	  var zoomLong = -91.182087;
@@ -73,7 +73,7 @@ require([
       		zoom: 7
   	  });	
 
-      } else if (region = "costarica") {
+      } else if (region == "costarica") {
       console.log(region)
 	  var zoomLat = 14.414071;
 	  var zoomLong = -91.182087;
@@ -85,7 +85,7 @@ require([
       		zoom: 7
   	  });	
 
-      } else if (region = "panama") {
+      } else (region == "panama") {
       console.log(region)
 	  var zoomLat = 14.414071;
 	  var zoomLong = -91.182087;
