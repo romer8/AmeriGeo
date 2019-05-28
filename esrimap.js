@@ -29,6 +29,12 @@ require([
 	  var zoomLat = 14.414071;
 	  var zoomLong = -91.182087;
 	  var location = new Point(zoomLong,zoomLat);
+	  var view = new MapView({
+      		container: "viewDiv",
+      		map: map,
+      		center: [-87, 13],
+      		zoom: 5
+  	  });	    
 	  map.centerAndZoom(location,16);
 
       } else if (region = "belize") {
