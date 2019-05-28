@@ -5,6 +5,7 @@ var view
 require([
   "esri/Map",
   "esri/views/MapView",
+  "dojo/on",
 ], function(Map, MapView) {
   var map = new Map({
     basemap: "osm"
@@ -91,9 +92,7 @@ require([
 	 map.centerAndZoom(location,16);	
 	});	`
 
-});
-
-    function ZoomToRegion() {
+     function ZoomToRegion() {
       let region = document.getElementById("mySelect").value;
       if (region = "guatemala") {
 	  console.log(region)
@@ -124,5 +123,9 @@ require([
 
       }
     };
+	 
+});
+
+
 
 
