@@ -18,7 +18,6 @@ require([
   
     // Create a button programmatically:
     var myButton = new Button({
-        label: "Click me!",
         onClick: function(){
       let region = document.getElementById("mySelect").value;
 
