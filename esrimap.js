@@ -92,17 +92,16 @@ require([
 	 map.centerAndZoom(location,16);	
 	});	`
 
-     function ZoomToRegion() {
+     function ZoomToRegion(on) {
       let region = document.getElementById("mySelect").value;
       if (region = "guatemala") {
 	  console.log(region)
+	 var zoomLat = 14.414071;
+	 var zoomLong = -91.182087;
+	 var location = new Point(zoomLong,zoomLat);
+	 map.centerAndZoom(location,16);
 
-          var view = new MapView({
-          container: "viewDiv",
-          map: map,
-          center: [-87, 13],
-          zoom: 8
-        });
+
       } else if (region = "belize") {
       console.log(region)
 
