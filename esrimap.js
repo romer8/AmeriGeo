@@ -20,9 +20,35 @@ require([
     var myButton = new Button({
         label: "Click me!",
         onClick: function(){
-            // Do something:
-            dom.byId("result1").innerHTML += "Thank you! ";
-        }
+      let region = document.getElementById("mySelect").value;
+
+      if (region = "guatemala") {
+	  console.log(region)
+	  var zoomLat = 14.414071;
+	  var zoomLong = -91.182087;
+	  var location = new Point(zoomLong,zoomLat);
+	  map.centerAndZoom(location,16);
+
+      } else if (region = "belize") {
+      console.log(region)
+
+      } else if (region = "elsalvador") {
+      console.log(region)
+
+      } else if (region = "honduras") {
+      console.log(region)
+
+      } else if (region = "nicaragua") {
+      console.log(region)
+
+      } else if (region = "costarica") {
+      console.log(region)
+
+      } else if (region = "panama") {
+      console.log(region)
+
+      }
+    };
     }, "progButtonNode").startup();
 	
 
