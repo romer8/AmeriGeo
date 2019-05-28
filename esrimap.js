@@ -26,7 +26,8 @@ require([
 	  console.log(region)
 	  var zoomLat = 14.414071;
 	  var zoomLong = -91.182087;
-	  map.centerAndZoom(zoomLong, zoomLat,16);
+	  var location = new Point(zoomLong,zoomLat);
+	  map.centerAndZoom(location,16);
 
       } else if (region = "belize") {
       console.log(region)
