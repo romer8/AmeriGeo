@@ -4,7 +4,7 @@ require([
   "dijit/form/Button",
   "dojo/dom",
   "dojo/domReady!",
-], function(Map, MapView, Button, dom) {
+], function(Map, MapView, Button, dom, Point) {
   var map = new Map({
     basemap: "osm"
   });
