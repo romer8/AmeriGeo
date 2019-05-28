@@ -57,7 +57,7 @@ require([
       		container: "viewDiv",
       		map: map,
       		center: [-88.686007, 17.216854],
-      		zoom: 7
+      		zoom: 8
   	  });
   	  	for(let i = 0; i < lon_list.length; i++){
 
@@ -88,7 +88,7 @@ require([
       		container: "viewDiv",
       		map: map,
       		center: [-89.18718, 13.68935],
-      		zoom: 7
+      		zoom: 9
   	  });
   	  	for(let i = 0; i < lon_list.length; i++){
 
@@ -181,7 +181,7 @@ require([
       		container: "viewDiv",
       		map: map,
       		center: [-84.090725, 9.928069],
-      		zoom: 7
+      		zoom: 8
   	  });
   	  	for(let i = 0; i < lon_list.length; i++){
 
