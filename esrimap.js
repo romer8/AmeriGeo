@@ -20,7 +20,7 @@ require([
     var myButton = new Button({
         
 	  onClick: function(){
-      let region = document.getElementById("mySelect").value;
+      var region = document.getElementById("mySelect").value;
 
       if (region = "guatemala1") {
 	  console.log(region)
