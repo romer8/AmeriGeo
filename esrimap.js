@@ -85,7 +85,7 @@ require([
       		zoom: 7
   	  });	
 
-      } else (region == "panama") {
+      } else if (region == "panama") {
       console.log(region)
 	  var zoomLat = 14.414071;
 	  var zoomLong = -91.182087;
