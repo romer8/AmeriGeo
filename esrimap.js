@@ -1,7 +1,7 @@
 require([
   "esri/Map",
   "esri/views/MapView",
-  "esri/geometry/Point"
+  "esri/geometry/Point",
   "dijit/form/Button",
   "dojo/dom",
   "dojo/domReady!",
