@@ -5,7 +5,8 @@ require([
   "dijit/form/Button",
   "dojo/dom",
   "dojo/domReady!",
-], function(Map, MapView, Point, Button, dom) {
+  "dojo/Deferred",
+], function(Map, MapView, Point, Button, dom, Deferred) {
   var map = new Map({
     basemap: "osm"
   });
@@ -28,7 +29,7 @@ require([
 	  var zoomLat = 14.414071;
 	  var zoomLong = -91.182087;
 	  var location = new Point(zoomLong,zoomLat);
-	  map.ZoomTo(location,16);
+	  map.centerAndZoom(location,16);
 
       } else if (region = "belize") {
       console.log(region)
