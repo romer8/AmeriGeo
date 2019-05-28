@@ -48,7 +48,7 @@ require([
       console.log(region)
 
       }
-    };
+    }
     }, "progButtonNode").startup();
 	
 
