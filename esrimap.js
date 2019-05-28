@@ -1,12 +1,10 @@
-var choose_region;
-var map
-var view
-
 require([
   "esri/Map",
   "esri/views/MapView",
-  "dojo/on",
-], function(Map, MapView) {
+  "dijit/form/Button",
+  "dojo/dom",
+  "dojo/domReady!",
+], function(Map, MapView, button, dom) {
   var map = new Map({
     basemap: "osm"
   });
@@ -18,6 +16,14 @@ require([
       zoom: 5
   });	
   
+    // Create a button programmatically:
+    var myButton = new Button({
+        label: "Click me!",
+        onClick: function(){
+            // Do something:
+            dom.byId("result1").innerHTML += "Thank you! ";
+        }
+    }, "progButtonNode").startup();
 	
 
 	
