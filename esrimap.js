@@ -18,11 +18,11 @@ require([
   
     // Create a button programmatically:
     var myButton = new Button({
-        
+          label: "Selecciona",
 	  onClick: function(){
       var region = document.getElementById("mySelect").value;
       console.log(region)
-      if (region == "guatemala1") {
+      if (region == "guatemala") {
 	  console.log(region)
 	  var view = new MapView({
       		container: "viewDiv",
@@ -51,9 +51,6 @@ require([
 
       } else if (region == "honduras") {
       console.log(region)
-	  var zoomLat = 14.414071;
-	  var zoomLong = -91.182087;
-	  var location = new Point(zoomLong,zoomLat);
 	  var view = new MapView({
       		container: "viewDiv",
       		map: map,
@@ -63,9 +60,6 @@ require([
 
       } else if (region == "nicaragua") {
       console.log(region)
-	  var zoomLat = 14.414071;
-	  var zoomLong = -91.182087;
-	  var location = new Point(zoomLong,zoomLat);
 	  var view = new MapView({
       		container: "viewDiv",
       		map: map,
@@ -75,9 +69,6 @@ require([
 
       } else if (region == "costarica") {
       console.log(region)
-	  var zoomLat = 14.414071;
-	  var zoomLong = -91.182087;
-	  var location = new Point(zoomLong,zoomLat);
 	  var view = new MapView({
       		container: "viewDiv",
       		map: map,
@@ -87,9 +78,6 @@ require([
 
       } else if (region == "panama") {
       console.log(region)
-	  var zoomLat = 14.414071;
-	  var zoomLong = -91.182087;
-	  var location = new Point(zoomLong,zoomLat);
 	  var view = new MapView({
       		container: "viewDiv",
       		map: map,
@@ -164,15 +152,7 @@ require([
 			}	
 		});
 	};
-	
-	 `$("#choose_region").on('click', function(){
-	 let region = document.getElementById("mySelect").value;
-	 console.log(region)
-	 var zoomLat = 14.414071;
-	 var zoomLong = -91.182087;
-	 var location = new Point(zoomLong,zoomLat);
-	 map.centerAndZoom(location,16);	
-	});	`
+
 
 	 
 });
