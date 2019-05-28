@@ -3,7 +3,7 @@ p{color: black;}
 h1{text-align: center;color: white;}
   html, body, #viewDiv {
   padding: 0;
-  margin: 35px;
+  margin: 5px;
   height: 100%;
   width: 100%;
 }
