@@ -17,8 +17,8 @@ require([
     basemap: "osm"
   });
 
-    esriConfig.defaults.io.corsEnabledServers.push("tethys.byu.edu");
-    esriConfig.defaults.io.corsEnabledServers.push("ai4e-arcserver.byu.edu")
+    esriConfig.request.push("tethys.byu.edu");
+    esriConfig.request.push("ai4e-arcserver.byu.edu")
 
   var view = new MapView({
       container: "viewDiv",
