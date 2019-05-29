@@ -263,35 +263,10 @@ require([
       var region = document.getElementById("mySelect").value;
 
       if (region == "guatemala") {
-	  var view = new MapView({
-      		container: "viewDiv",
-      		map: map,
-      		center: [-91.182087, 14.414071],
-      		zoom: 7
-  	  });
-  	  	for(let i = 0; i < lon_list.length; i++){
-
-		view.graphics.add({
-			symbol: {
-				type: "text",
-				color: "#2f5799",
-				text: "\ue613",
-				font: {
-					size: 20,
-					family: "CalciteWebCoreIcons"
-				}
-			},
-			geometry: {
-				type: "point",
-				longitude: lon_list[i],
-				latitude: lat_list[i]
-			},
-			popupTemplate: {
-				title: name_list[i],
-				content: getstreamflow
-			}
-		});
-	    };
+        view.goTo({
+          center: [-91.182087, 14.414071],
+          zoom: 7
+        });
 
       } else if (region == "belize") {
 	  var view = new MapView({
