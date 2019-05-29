@@ -32,8 +32,8 @@ require([
     //map.popupWindow.resize(850, 600);
     //map.popupWindow.anchor = "ANCHOR_UPPERRIGHT"
     //map.infoWindow.reposition();
-    popupTemplate.Title("Global Streamflow Forecasting");
-    popupTemplate.Content(getstreamflow);
+    popupTemplate.title("Global Streamflow Forecasting");
+    popupTemplate.content(getstreamflow);
 
     function getstreamflow(graphic) {
         var watershed = graphic.attributes.watershed;
