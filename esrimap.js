@@ -3,6 +3,7 @@ var dates = {highres: [], dates: []}
 var values = {highres: [], max: [], mean: [], min: [], std_dev_range_lower: [], std_dev_range_upper: []};
 var returnShapes;
 var region;
+var view;
 require([
   "esri/Map",
   "esri/views/MapView",
