@@ -43,7 +43,7 @@ require([
         var comid = "927466";
         var layerUrl = "https://tethys.byu.edu/apps/streamflow-prediction-tool/api/GetForecast/?watershed_name=" + watershed + "&subbasin_name=" + subbasin + "&reach_id=" + comid + "&forecast_folder=most_recent&return_format=csv";
         //esriConfig.defaults.io.corsEnabledServers.push("tethys.byu.edu");
-        var request = $.ajax({
+        $.ajax({
             type: 'GET',
             url: layerUrl,
             dataType: 'text',
