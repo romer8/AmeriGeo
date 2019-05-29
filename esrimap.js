@@ -295,7 +295,7 @@ require([
 			},
 			popupTemplate: {
 				title: name_list[i],
-				content: content_list[i]
+				content: getstreamflow
 			}
 		});
 	    };
@@ -326,7 +326,7 @@ require([
 			},
 			popupTemplate: {
 				title: name_list[i],
-				content: content_list[i]
+				content: getstreamflow
 			}
 		});
 	    };
@@ -357,7 +357,7 @@ require([
 			},
 			popupTemplate: {
 				title: name_list[i],
-				content: content_list[i]
+				content: getstreamflow
 			}
 		});
 	    };
@@ -388,7 +388,7 @@ require([
 			},
 			popupTemplate: {
 				title: name_list[i],
-				content: content_list[i]
+				content: getstreamflow
 			}
 		});
 	    };
@@ -419,7 +419,7 @@ require([
 			},
 			popupTemplate: {
 				title: name_list[i],
-				content: content_list[i]
+				content: getstreamflow
 			}
 		});
 	    };
@@ -450,7 +450,7 @@ require([
 			},
 			popupTemplate: {
 				title: name_list[i],
-				content: content_list[i]
+				content: getstreamflow
 			}
 		});
 	    };
