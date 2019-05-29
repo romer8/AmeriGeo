@@ -6,13 +6,13 @@ require([
   "esri/Map",
   "esri/views/MapView",
   "dijit/form/Button",
-  "esri/InfoTemplate",
+  "esri/PopupTemplate",
   "esri/request",
   "esri/config",
   "dojo/_base/array",
   "dojo/dom",
   "dojo/domReady!",
-], function(Map, MapView, Button, InfoTemplate, esriRequest, esriConfig, arrayUtils, dom) {
+], function(Map, MapView, Button, PopupTemplate, esriRequest, esriConfig, arrayUtils, dom) {
   var map = new Map({
     basemap: "osm"
   });
@@ -28,12 +28,12 @@ require([
   });
 
 
-      var infoTemplate = new InfoTemplate()
-    map.infoWindow.resize(850, 600);
-    map.infoWindow.anchor = "ANCHOR_UPPERRIGHT"
+    var popupTemplate = new PopupTemplate()
+    map.popupWindow.resize(850, 600);
+    map.popupWindow.anchor = "ANCHOR_UPPERRIGHT"
     map.infoWindow.reposition();
-    infoTemplate.setTitle("Global Streamflow Forecasting");
-    infoTemplate.setContent(getstreamflow);
+    popupTemplate.setTitle("Global Streamflow Forecasting");
+    popupTemplate.setContent(getstreamflow);
 
     function getstreamflow(graphic) {
         var watershed = graphic.attributes.watershed;
@@ -287,7 +287,7 @@ require([
 			},
 			popupTemplate: {
 				title: name_list[i],
-				content: infoTemplate
+				content: popupTemplate
 			}
 		});
 	    };
