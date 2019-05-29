@@ -17,8 +17,8 @@ require([
     basemap: "osm"
   });
 
-    esriConfig.request.push("tethys.byu.edu");
-    esriConfig.request.push("ai4e-arcserver.byu.edu")
+    esriConfig.request("tethys.byu.edu");
+    esriConfig.request("ai4e-arcserver.byu.edu")
 
   var view = new MapView({
       container: "viewDiv",
