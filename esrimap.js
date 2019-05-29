@@ -2,6 +2,7 @@ var map;
 var dates = {highres: [], dates: []}
 var values = {highres: [], max: [], mean: [], min: [], std_dev_range_lower: [], std_dev_range_upper: []};
 var returnShapes;
+var region;
 require([
   "esri/Map",
   "esri/views/MapView",
@@ -36,11 +37,11 @@ require([
     //popupTemplate.content = getstreamflow;
 
     function getstreamflow(graphic) {
-        var watershed = graphic.attributes.watershed;
-        var subbasin = graphic.attributes.subbasin;
-        var comid = graphic.attributes.comid;
+        var watershed = "central_america";
+        var subbasin = "merit";
+        var comid = "927466";
         var layerUrl = "https://tethys.byu.edu/apps/streamflow-prediction-tool/api/GetForecast/?watershed_name=" + watershed + "&subbasin_name=" + subbasin + "&reach_id=" + comid + "&forecast_folder=most_recent&return_format=csv";
-        esriConfig.defaults.io.corsEnabledServers.push("tethys.byu.edu");
+        //esriConfig.defaults.io.corsEnabledServers.push("tethys.byu.edu");
         $.ajax({
             type: 'GET',
             url: layerUrl,
