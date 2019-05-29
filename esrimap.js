@@ -29,11 +29,11 @@ require([
 
 
     var popupTemplate = new PopupTemplate()
-    map.popupWindow.resize(850, 600);
-    map.popupWindow.anchor = "ANCHOR_UPPERRIGHT"
-    map.infoWindow.reposition();
-    popupTemplate.setTitle("Global Streamflow Forecasting");
-    popupTemplate.setContent(getstreamflow);
+    //map.popupWindow.resize(850, 600);
+    //map.popupWindow.anchor = "ANCHOR_UPPERRIGHT"
+    //map.infoWindow.reposition();
+    popupTemplate.Title("Global Streamflow Forecasting");
+    popupTemplate.Content(getstreamflow);
 
     function getstreamflow(graphic) {
         var watershed = graphic.attributes.watershed;
