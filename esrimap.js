@@ -29,11 +29,6 @@ require([
 
 
     var popupTemplate = new PopupTemplate()
-    //map.popupWindow.resize(850, 600);
-    //map.popupWindow.anchor = "ANCHOR_UPPERRIGHT"
-    //map.infoWindow.reposition();
-    //popupTemplate.title = "Global Streamflow Forecasting";
-    //popupTemplate.content = getstreamflow;
 
     function getstreamflow() {
         var watershed = "central_america";
@@ -55,7 +50,7 @@ require([
                     $('#graph').remove();
                 };
 
-                $('div .contentPane').append('<div id="graph"></div>');
+                $('div .popup').append('<div id="graph"></div>');
                 var allLines = data.split('\n');
                 var headers = allLines[0].split(',');
 
