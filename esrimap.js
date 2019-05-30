@@ -2,8 +2,16 @@ var map;
 var dates = {highres: [], dates: []}
 var values = {highres: [], max: [], mean: [], min: [], std_dev_range_lower: [], std_dev_range_upper: []};
 var returnShapes;
-var region;
-var view;
+var region = document.getElementById("mySelect").value;
+var map = new Map({
+  basemap: "osm"
+});
+var view = new MapView({
+  container: "viewDiv",
+  map: map,
+  center: [-87, 13],
+  zoom: 5
+});
 require([
   "esri/Map",
   "esri/views/MapView",
