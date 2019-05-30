@@ -50,7 +50,7 @@ require([
                     $('#graph').remove();
                 };
 
-                $('div .popup').append('<div id="graph"></div>');
+                $('div .contentPane').append('<div id="graph"></div>');
                 var allLines = data.split('\n');
                 var headers = allLines[0].split(',');
 
