@@ -2,19 +2,17 @@ var map;
 var dates = {highres: [], dates: []}
 var values = {highres: [], max: [], mean: [], min: [], std_dev_range_lower: [], std_dev_range_upper: []};
 var returnShapes;
-var region;
-var view;
+
 require([
   "esri/Map",
   "esri/views/MapView",
-  "dijit/form/Button",
   "esri/PopupTemplate",
   "esri/request",
   "esri/config",
   "dojo/_base/array",
   "dojo/dom",
   "dojo/domReady!",
-], function(Map, MapView, Button, PopupTemplate, esriRequest, esriConfig, arrayUtils, dom) {
+], function(Map, MapView, PopupTemplate, esriRequest, esriConfig, arrayUtils, dom) {
   var map = new Map({
     basemap: "osm"
   });
@@ -250,214 +248,6 @@ require([
 
         return str.join(' ');
     };
-
-
-
-
-
-
-
-    // Create a button programmatically:
-    var myButton = new Button({
-      label: "Selecciona",
-	  onClick: function(){
-      var region = document.getElementById("mySelect").value;
-
-      if (region == "guatemala") {
-        view.goTo({
-          center: [-91.182087, 14.414071],
-          zoom: 7
-        });
-
-      } else if (region == "belize") {
-	  var view = new MapView({
-      		container: "viewDiv",
-      		map: map,
-      		center: [-88.686007, 17.216854],
-      		zoom: 8
-  	  });
-  	  	for(let i = 0; i < lon_list.length; i++){
-
-		view.graphics.add({
-			symbol: {
-				type: "text",
-				color: "#2f5799",
-				text: "\ue613",
-				font: {
-					size: 20,
-					family: "CalciteWebCoreIcons"
-				}
-			},
-			geometry: {
-				type: "point",
-				longitude: lon_list[i],
-				latitude: lat_list[i]
-			},
-			popupTemplate: {
-				title: name_list[i],
-				content: getstreamflow
-			}
-		});
-	    };
-
-      } else if (region == "elsalvador") {
-	  var view = new MapView({
-      		container: "viewDiv",
-      		map: map,
-      		center: [-89.18718, 13.68935],
-      		zoom: 9
-  	  });
-  	  	for(let i = 0; i < lon_list.length; i++){
-
-		view.graphics.add({
-			symbol: {
-				type: "text",
-				color: "#2f5799",
-				text: "\ue613",
-				font: {
-					size: 20,
-					family: "CalciteWebCoreIcons"
-				}
-			},
-			geometry: {
-				type: "point",
-				longitude: lon_list[i],
-				latitude: lat_list[i]
-			},
-			popupTemplate: {
-				title: name_list[i],
-				content: getstreamflow
-			}
-		});
-	    };
-
-      } else if (region == "honduras") {
-	  var view = new MapView({
-      		container: "viewDiv",
-      		map: map,
-      		center: [-86.820350, 13.943780],
-      		zoom: 7
-  	  });
-  	  	for(let i = 0; i < lon_list.length; i++){
-
-		view.graphics.add({
-			symbol: {
-				type: "text",
-				color: "#2f5799",
-				text: "\ue613",
-				font: {
-					size: 20,
-					family: "CalciteWebCoreIcons"
-				}
-			},
-			geometry: {
-				type: "point",
-				longitude: lon_list[i],
-				latitude: lat_list[i]
-			},
-			popupTemplate: {
-				title: name_list[i],
-				content: getstreamflow
-			}
-		});
-	    };
-
-      } else if (region == "nicaragua") {
-	  var view = new MapView({
-      		container: "viewDiv",
-      		map: map,
-      		center: [-86.396540, 13.362330],
-      		zoom: 7
-  	  });
-  	  	for(let i = 0; i < lon_list.length; i++){
-
-		view.graphics.add({
-			symbol: {
-				type: "text",
-				color: "#2f5799",
-				text: "\ue613",
-				font: {
-					size: 20,
-					family: "CalciteWebCoreIcons"
-				}
-			},
-			geometry: {
-				type: "point",
-				longitude: lon_list[i],
-				latitude: lat_list[i]
-			},
-			popupTemplate: {
-				title: name_list[i],
-				content: getstreamflow
-			}
-		});
-	    };
-
-      } else if (region == "costarica") {
-	  var view = new MapView({
-      		container: "viewDiv",
-      		map: map,
-      		center: [-84.090725, 9.928069],
-      		zoom: 8
-  	  });
-  	  	for(let i = 0; i < lon_list.length; i++){
-
-		view.graphics.add({
-			symbol: {
-				type: "text",
-				color: "#2f5799",
-				text: "\ue613",
-				font: {
-					size: 20,
-					family: "CalciteWebCoreIcons"
-				}
-			},
-			geometry: {
-				type: "point",
-				longitude: lon_list[i],
-				latitude: lat_list[i]
-			},
-			popupTemplate: {
-				title: name_list[i],
-				content: getstreamflow
-			}
-		});
-	    };
-
-      } else if (region == "panama") {
-	  var view = new MapView({
-      		container: "viewDiv",
-      		map: map,
-      		center: [-79.519870, 8.982379],
-      		zoom: 7
-  	  });
-  	  	for(let i = 0; i < lon_list.length; i++){
-
-		view.graphics.add({
-			symbol: {
-				type: "text",
-				color: "#2f5799",
-				text: "\ue613",
-				font: {
-					size: 20,
-					family: "CalciteWebCoreIcons"
-				}
-			},
-			geometry: {
-				type: "point",
-				longitude: lon_list[i],
-				latitude: lat_list[i]
-			},
-			popupTemplate: {
-				title: name_list[i],
-				content: getstreamflow
-			}
-		});
-	    };
-
-      }
-    }
-    }, "progButtonNode").startup();
 
 
 
