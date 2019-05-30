@@ -38,6 +38,7 @@ require([
         esriConfig.request.proxyUrl = "tethys.byu.edu";
         $.ajax({
             type: 'GET',
+	    async: false,
             url: layerUrl,
             dataType: 'text',
             contentType: "text/plain",
