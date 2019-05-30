@@ -35,7 +35,7 @@ require([
     //popupTemplate.title = "Global Streamflow Forecasting";
     //popupTemplate.content = getstreamflow;
 
-    function getstreamflow(graphic) {
+    function getstreamflow() {
         var watershed = "central_america";
         var subbasin = "merit";
         var comid = "927466";
@@ -285,8 +285,6 @@ require([
 
 		"Download the " + "<a href=https://tethys.byu.edu/apps/streamflow-prediction-tool/api/GetForecast/?watershed_name=central_america&subbasin_name=merit&reach_id=928849&forecast_folder=most_recent&return_format=csv>Forecast</a>" +
 		"<br>Download the " + "<a href=https://tethys.byu.edu/apps/streamflow-prediction-tool/api/GetHistoricData/?watershed_name=central_america&subbasin_name=merit&reach_id=928849&return_format=csv>Historic Data</a>",
-
-
 	]
 
 	for(let i = 0; i < lon_list.length; i++){
@@ -308,7 +306,7 @@ require([
 			},
 			popupTemplate: {
 				title: name_list[i],
-				content: content_list[i]
+				content: getstreamflow
 			}
 		});
 	};
