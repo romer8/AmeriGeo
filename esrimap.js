@@ -263,7 +263,7 @@ require([
 	  onClick: function(){
       var region = document.getElementById("mySelect").value;
 
-      if (region == "guatemala" && view) {
+      if (region == "guatemala") {
         view.goTo({
           center: [-91.182087, 14.414071],
           zoom: 7
