@@ -2,7 +2,7 @@ var map;
 var dates = {highres: [], dates: []}
 var values = {highres: [], max: [], mean: [], min: [], std_dev_range_lower: [], std_dev_range_upper: []};
 var returnShapes;
-var region = document.getElementById("mySelect").value;
+var region;
 var map = new Map({
   basemap: "osm"
 });
