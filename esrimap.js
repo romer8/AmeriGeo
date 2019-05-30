@@ -146,7 +146,7 @@ require([
                     //shapes: returnShapes,
                 }
 
-                Plotly.newPlot('graph', data, layout);
+                Plotly.newPlot(graph, data, layout);
 
                 var index = dates.dates.length - 2;
                 console.log(index);
