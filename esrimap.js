@@ -302,7 +302,8 @@ require([
 			},
 			popupTemplate: {
 				title: name_list[i],
-				content: "Hi." + getstreamflow
+				content: "Hi." + getstreamflow,
+				$('.esri-popup__content').append('<div id="graph"></div>');
 			}
 		});
 	};
