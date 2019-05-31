@@ -29,7 +29,7 @@ require([
 
 
     var popupTemplate = new PopupTemplate()
-
+    $('.esri-popup__content').append('<div id="graph"></div>');
     function getstreamflow() {
         var watershed = "central_america";
         var subbasin = "merit";
@@ -284,7 +284,7 @@ require([
 	]
 
 	for(let i = 0; i < lon_list.length; i++){
-
+                $('.esri-popup__content').append('<div id="graph"></div>');
 		view.graphics.add({
 			symbol: {
 				type: "text",
@@ -306,5 +306,5 @@ require([
 			}
 		});
 	};
-	$('.esri-popup__content').append('<div id="graph"></div>');
+
 });
