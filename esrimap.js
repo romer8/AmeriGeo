@@ -51,7 +51,7 @@ require([
                     $('#graph').remove();
                 };
 
-                $('div .esri-popup__content').append('<div id="graph"></div>');
+                $('.esri-popup__content').append('<div id="graph"></div>');
                 var allLines = data.split('\n');
                 var headers = allLines[0].split(',');
 
