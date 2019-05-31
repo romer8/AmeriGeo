@@ -302,7 +302,7 @@ require([
 			},
 			popupTemplate: {
 				title: name_list[i],
-				content: content_list[i] + getstreamflow
+				content: "" + getstreamflow
 			}
 		});
 	};
