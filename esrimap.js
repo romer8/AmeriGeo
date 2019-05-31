@@ -30,7 +30,7 @@ require([
 
     var popupTemplate = new PopupTemplate()
 
-    function getstreamflow(graphic) {
+    function getstreamflow() {
         var watershed = "central_america";
         var subbasin = "merit";
         var comid = "927466";
