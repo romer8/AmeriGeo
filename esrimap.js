@@ -168,6 +168,7 @@ require([
         $.ajax({
             type: 'GET',
             url: layerUrl,
+	    async: false,
             dataType: 'text',
             contentType: "text/plain",
             headers: {
