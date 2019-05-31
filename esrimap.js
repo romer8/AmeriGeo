@@ -51,7 +51,7 @@ require([
                     $('#graph').remove();
                 };
 
-                $('div .contentPane').append('<div id="graph"></div>');
+                $('div .esri-popup').append('<div id="graph"></div>');
                 var allLines = data.split('\n');
                 var headers = allLines[0].split(',');
 
@@ -302,7 +302,7 @@ require([
 			},
 			popupTemplate: {
 				title: name_list[i],
-				content: getstreamflow
+				content: content_list[i]
 			}
 		});
 	};
