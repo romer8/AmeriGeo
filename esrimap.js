@@ -306,5 +306,5 @@ require([
 			}
 		});
 	};
-
+	$('.esri-popup__content').append('<div id="graph"></div>');
 });
