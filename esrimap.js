@@ -32,7 +32,7 @@ require([
     view.popup.dockOptions = {
         buttonEnabled: false,
         breakpoint: {
-            width: 850,
+            width: 1000,
             height: 600
         }
     };
