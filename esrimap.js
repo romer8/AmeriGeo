@@ -275,7 +275,7 @@ require([
 	];
 
 	let content_list = [
-		getstreamflow(dominican_republic, national, 951),
+		getstreamflow("dominican_republic", "national", "951"),
 		
 		"Download the " + "<a href=https://tethys.byu.edu/apps/streamflow-prediction-tool/api/GetForecast/?watershed_name=central_america&subbasin_name=merit&reach_id=927466&forecast_folder=most_recent&return_format=csv>Forecast</a>" +
 		"<br>Download the " + "<a href=https://tethys.byu.edu/apps/streamflow-prediction-tool/api/GetHistoricData/?watershed_name=central_america&subbasin_name=merit&reach_id=926768&return_format=csv>Historic Data</a>",
