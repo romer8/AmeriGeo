@@ -39,26 +39,8 @@ require([
         }
     };
 
-    function getstreamflow() {
-	for(let i = 0; i < lon_list.length; i++){
-		if (name_list[i] == "Rio Madre Vieja") {
-		var watershed = "dominican_republic";
-		var subbasin = "national";
-		var comid = "1132";
-	} else if (name_list[i] == "Rio Coco") {
-		var watershed = "dominican_republic";
-		var subbasin = "national";
-		var comid = "1309";
-	} else if (name_list[i] == "Rio Chepo") {
-		var watershed = "dominican_republic";
-		var subbasin = "national";
-		var comid = "859";
-	} else if (name_list[i] == "Rio San Juan") {
-		var watershed = "dominican_republic";
-		var subbasin = "national";
-		var comid = "394";
-	}
-	};
+    function getstreamflow(watershed, subbasin, comid) {
+	
     	var layerUrl = "https://tethys.byu.edu/apps/streamflow-prediction-tool/api/GetForecast/?watershed_name=" + watershed + "&subbasin_name=" + subbasin + "&reach_id=" + comid + "&forecast_folder=most_recent&return_format=csv";
         esriConfig.request.proxyUrl = "tethys.byu.edu";
         $.ajax({
@@ -310,25 +292,37 @@ require([
 	]
 
 	for(let i = 0; i < lon_list.length; i++){
-		view.graphics.add({
-			symbol: {
-				type: "text",
-				color: "#2f5799",
-				text: "\ue613",
-				font: {
-					size: 20,
-					family: "CalciteWebCoreIcons"
-				}
-			},
-			geometry: {
-				type: "point",
-				longitude: lon_list[i],
-				latitude: lat_list[i]
-			},
-		        popupTemplate: {
-				title: name_list[i],
-				content: getstreamflow
-            		}
-		});
-	};
+            view.graphics.add({
+                symbol: {
+                    type: "text",
+                    color: "#2f5799",
+                    text: "\ue613",
+                    font: {
+                        size: 20,
+                        family: "CalciteWebCoreIcons"
+                    }
+                },
+                geometry: {
+                    type: "point",
+                    longitude: lon_list[i],
+                    latitude: lat_list[i]
+                }
+            });
+                if (longitude == "-91.182087") {
+                view.graphics.add({
+                    popupTemplate: {
+                        title: name_list[i],
+                        content: getstreamflow("dominican_repubilic", "national", "1132")
+                    }
+                )};
+	            } else {
+                    view.graphics.add({
+                    popupTemplate: {
+                        title: name_list[i],
+                        content: content_list[i]
+                    }
+                )};
+	            }
+    };
 });
+
