@@ -308,7 +308,7 @@ require([
                     latitude: lat_list[i]
                 }
             });
-                if (longitude == "-91.182087") {
+                if (lon_list[i] == "-91.182087") {
                 view.graphics.add({
                     popupTemplate: {
                         title: name_list[i],
