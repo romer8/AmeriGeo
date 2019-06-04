@@ -34,7 +34,6 @@ require([
         var watershed = "central_america";
         var subbasin = "merit";
         var comid = "927466";
-	console.log(comid);
         var layerUrl = "https://tethys.byu.edu/apps/streamflow-prediction-tool/api/GetForecast/?watershed_name=" + watershed + "&subbasin_name=" + subbasin + "&reach_id=" + comid + "&forecast_folder=most_recent&return_format=csv";
         esriConfig.request.proxyUrl = "tethys.byu.edu";
         $.ajax({
@@ -166,7 +165,7 @@ require([
 
     function getreturnperiods(start, end, watershed, subbasin, comid) {
         var layerUrl = "https://tethys.byu.edu/apps/streamflow-prediction-tool/api/GetReturnPeriods/?watershed_name=" + watershed + "&subbasin_name=" + subbasin + "&reach_id=" + comid;
-        esriConfig.defaults.io.corsEnabledServers.push("tethys.byu.edu");
+        esriConfig.request.proxyUrl = "tethys.byu.edu";
         $.ajax({
             type: 'GET',
             url: layerUrl,
