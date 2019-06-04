@@ -303,17 +303,17 @@ require([
 				longitude: lon_list[i],
 				latitude: lat_list[i]
 			},
-			if (lon_list[i] == "-91.182087") {
+			if (longitude == "-91.182087") {
 
-                popupTemplate: {
-                    title: name_list[i],
-                    content: getstreamflow("dominican_republic", "national", "951")
-                    }
-            } else {
-                popupTemplate: {
-                title: name_list[i],
-                content: content_list[i]
-                }
+			popupTemplate: {
+			    title: name_list[i],
+			    content: getstreamflow("dominican_republic", "national", "951")
+			    }
+			} else {
+			popupTemplate: {
+			title: name_list[i],
+			content: content_list[i]
+			}
 			}
 		});
 	};
