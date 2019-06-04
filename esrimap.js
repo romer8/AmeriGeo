@@ -32,15 +32,12 @@ require([
     view.popup.dockOptions = {
         buttonEnabled: false,
         breakpoint: {
-            width: 1000,
+            width: 2000,
             height: 600
         }
     };
 
-    function getstreamflow() {
-        var watershed = "dominican_republic";
-        var subbasin = "national";
-        var comid = "651";
+    function getstreamflow(watershed, subbasin, comid) {
         var layerUrl = "https://tethys.byu.edu/apps/streamflow-prediction-tool/api/GetForecast/?watershed_name=" + watershed + "&subbasin_name=" + subbasin + "&reach_id=" + comid + "&forecast_folder=most_recent&return_format=csv";
         esriConfig.request.proxyUrl = "tethys.byu.edu";
         $.ajax({
@@ -278,9 +275,8 @@ require([
 	];
 
 	let content_list = [
-		"Download the " + "<a href=https://tethys.byu.edu/apps/streamflow-prediction-tool/api/GetForecast/?watershed_name=central_america&subbasin_name=merit&reach_id=927466&forecast_folder=most_recent&return_format=csv>Forecast</a>" +
-		"<br>Download the " + "<a href=https://tethys.byu.edu/apps/streamflow-prediction-tool/api/GetHistoricData/?watershed_name=central_america&subbasin_name=merit&reach_id=926768&return_format=csv>Historic Data</a>",
-
+		getstreamflow(dominican_republic, national, 951),
+		
 		"Download the " + "<a href=https://tethys.byu.edu/apps/streamflow-prediction-tool/api/GetForecast/?watershed_name=central_america&subbasin_name=merit&reach_id=927466&forecast_folder=most_recent&return_format=csv>Forecast</a>" +
 		"<br>Download the " + "<a href=https://tethys.byu.edu/apps/streamflow-prediction-tool/api/GetHistoricData/?watershed_name=central_america&subbasin_name=merit&reach_id=926768&return_format=csv>Historic Data</a>",
 
@@ -309,7 +305,7 @@ require([
 			},
 			popupTemplate: {
 				title: name_list[i],
-				content: getstreamflow
+				content: content_list[i]
 
 			}
 		});
