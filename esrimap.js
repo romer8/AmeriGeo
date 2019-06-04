@@ -314,7 +314,7 @@ require([
                         title: name_list[i],
                         content: getstreamflow("dominican_repubilic", "national", "1132")
                     }
-                )};
+                });
 	            } else {
                     view.graphics.add({
                     popupTemplate: {
