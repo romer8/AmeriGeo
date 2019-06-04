@@ -321,7 +321,7 @@ require([
                         title: name_list[i],
                         content: content_list[i]
                     }
-                )};
+                });
 	            }
     };
 });
