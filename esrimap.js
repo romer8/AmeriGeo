@@ -46,6 +46,7 @@ require([
                 'Authorization': "Token 2d03550b3b32cdfd03a0c876feda690d1d15ad40"
             },
             success: function(data) {
+	    	console.log(data);
                 if ($('#graph').length) {
                     Plotly.purge('graph');
                     $('#graph').remove();
@@ -145,11 +146,10 @@ require([
                     yaxis: {title: 'Streamflow m3/s', range: [0, Math.max(...values.max) + Math.max(...values.max)/5]},
                     //shapes: returnShapes,
                 }
-                console.log(data);
+  
                 Plotly.newPlot("graph", data, layout);
 
                 var index = dates.dates.length - 2;
-                console.log(data);
 		console.log(index);
                 getreturnperiods(dates.dates[0], dates.dates[index], watershed, subbasin, comid);
 
