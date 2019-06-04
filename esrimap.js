@@ -170,6 +170,407 @@ require([
 
         return
     };
+    
+    function getstreamflow2() {
+        var watershed = "dominican_republic";
+        var subbasin = "national";
+        var comid = "1003";
+        var layerUrl = "https://tethys.byu.edu/apps/streamflow-prediction-tool/api/GetForecast/?watershed_name=" + watershed + "&subbasin_name=" + subbasin + "&reach_id=" + comid + "&forecast_folder=most_recent&return_format=csv";
+        esriConfig.request.proxyUrl = "tethys.byu.edu";
+        $.ajax({
+            type: 'GET',
+	        async: false,
+            url: layerUrl,
+            dataType: 'text',
+            contentType: "text/plain",
+            headers: {
+                'Authorization': "Token 2d03550b3b32cdfd03a0c876feda690d1d15ad40"
+            },
+            success: function(data) {
+                if ($('#graph').length) {
+                    Plotly.purge('graph');
+                    $('#graph').remove();
+                };
+
+                $('div .esri-popup__main-container').append('<div id="graph"></div>');
+                var allLines = data.split('\n');
+                var headers = allLines[0].split(',');
+
+                for (var i=1; i < allLines.length; i++) {
+                    var data = allLines[i].split(',');
+
+                    if (headers.includes('high_res (m3/s)')) {
+                        dates.highres.push(data[0]);
+                        values.highres.push(data[1]);
+
+                        if (data[2] !== 'nan') {
+                            dates.dates.push(data[0]);
+                            values.max.push(data[2]);
+                            values.mean.push(data[3]);
+                            values.min.push(data[4]);
+                            values.std_dev_range_lower.push(data[5]);
+                            values.std_dev_range_upper.push(data[6]);
+                        }
+                    } else {
+                        dates.dates.push(data[0]);
+                        values.max.push(data[1]);
+                        values.mean.push(data[2]);
+                        values.min.push(data[3]);
+                        values.std_dev_range_lower.push(data[4]);
+                        values.std_dev_range_upper.push(data[5]);
+                    }
+                }
+            },
+            complete: function() {
+                var mean = {
+                    name: 'Mean',
+                    x: dates.dates,
+                    y: values.mean,
+                    mode: "lines",
+                    line: {color: 'blue'}
+                };
+
+                var max = {
+                    name: 'Max',
+                    x: dates.dates,
+                    y: values.max,
+                    fill: 'tonexty',
+                    mode: "lines",
+                    line: {color: 'rgb(152, 251, 152)', width: 0}
+                };
+
+                var min = {
+                    name: 'Min',
+                    x: dates.dates,
+                    y: values.min,
+                    fill: 'none',
+                    mode: "lines",
+                    line: {color: 'rgb(152, 251, 152)'}
+                };
+
+                var std_dev_lower = {
+                    name: 'Std. Dev. Lower',
+                    x: dates.dates,
+                    y: values.std_dev_range_lower,
+                    fill: 'tonexty',
+                    mode: "lines",
+                    line: {color: 'rgb(152, 251, 152)', width: 0}
+                };
+
+                var std_dev_upper = {
+                    name: 'Std. Dev. Upper',
+                    x: dates.dates,
+                    y: values.std_dev_range_upper,
+                    fill: 'tonexty',
+                    mode: "lines",
+                    line: {color: 'rgb(152, 251, 152)', width: 0}
+                };
+
+                var data = [min, max, std_dev_lower, std_dev_upper, mean];
+
+                if(values.highres.length > 0) {
+                    var highres = {
+                        name: 'HRES',
+                        x: dates.highres,
+                        y: values.highres,
+                        mode: "lines",
+                        line: {color: 'black'}
+                    };
+
+                    data.push(highres)
+                }
+
+                var layout = {
+                    title: titleCase(watershed) + ' Forecast<br>Reach ID: ' + comid,
+                    xaxis: {title: 'Date'},
+                    yaxis: {title: 'Streamflow m3/s', range: [0, Math.max(...values.max) + Math.max(...values.max)/5]},
+                    //shapes: returnShapes,
+                }
+
+                Plotly.newPlot("graph", data, layout);
+
+                var index = dates.dates.length - 2;
+		console.log(index);
+                getreturnperiods(dates.dates[0], dates.dates[index], watershed, subbasin, comid);
+
+
+                dates.highres = [], dates.dates = [];
+                values.highres = [], values.max = [], values.mean = [], values.min = [], values.std_dev_range_lower = [], values.std_dev_range_upper = [];
+            }
+
+        });;
+
+        return
+    };
+
+
+    function getstreamflow3() {
+        var watershed = "dominican_republic";
+        var subbasin = "national";
+        var comid = "959";
+        var layerUrl = "https://tethys.byu.edu/apps/streamflow-prediction-tool/api/GetForecast/?watershed_name=" + watershed + "&subbasin_name=" + subbasin + "&reach_id=" + comid + "&forecast_folder=most_recent&return_format=csv";
+        esriConfig.request.proxyUrl = "tethys.byu.edu";
+        $.ajax({
+            type: 'GET',
+	        async: false,
+            url: layerUrl,
+            dataType: 'text',
+            contentType: "text/plain",
+            headers: {
+                'Authorization': "Token 2d03550b3b32cdfd03a0c876feda690d1d15ad40"
+            },
+            success: function(data) {
+                if ($('#graph').length) {
+                    Plotly.purge('graph');
+                    $('#graph').remove();
+                };
+
+                $('div .esri-popup__main-container').append('<div id="graph"></div>');
+                var allLines = data.split('\n');
+                var headers = allLines[0].split(',');
+
+                for (var i=1; i < allLines.length; i++) {
+                    var data = allLines[i].split(',');
+
+                    if (headers.includes('high_res (m3/s)')) {
+                        dates.highres.push(data[0]);
+                        values.highres.push(data[1]);
+
+                        if (data[2] !== 'nan') {
+                            dates.dates.push(data[0]);
+                            values.max.push(data[2]);
+                            values.mean.push(data[3]);
+                            values.min.push(data[4]);
+                            values.std_dev_range_lower.push(data[5]);
+                            values.std_dev_range_upper.push(data[6]);
+                        }
+                    } else {
+                        dates.dates.push(data[0]);
+                        values.max.push(data[1]);
+                        values.mean.push(data[2]);
+                        values.min.push(data[3]);
+                        values.std_dev_range_lower.push(data[4]);
+                        values.std_dev_range_upper.push(data[5]);
+                    }
+                }
+            },
+            complete: function() {
+                var mean = {
+                    name: 'Mean',
+                    x: dates.dates,
+                    y: values.mean,
+                    mode: "lines",
+                    line: {color: 'blue'}
+                };
+
+                var max = {
+                    name: 'Max',
+                    x: dates.dates,
+                    y: values.max,
+                    fill: 'tonexty',
+                    mode: "lines",
+                    line: {color: 'rgb(152, 251, 152)', width: 0}
+                };
+
+                var min = {
+                    name: 'Min',
+                    x: dates.dates,
+                    y: values.min,
+                    fill: 'none',
+                    mode: "lines",
+                    line: {color: 'rgb(152, 251, 152)'}
+                };
+
+                var std_dev_lower = {
+                    name: 'Std. Dev. Lower',
+                    x: dates.dates,
+                    y: values.std_dev_range_lower,
+                    fill: 'tonexty',
+                    mode: "lines",
+                    line: {color: 'rgb(152, 251, 152)', width: 0}
+                };
+
+                var std_dev_upper = {
+                    name: 'Std. Dev. Upper',
+                    x: dates.dates,
+                    y: values.std_dev_range_upper,
+                    fill: 'tonexty',
+                    mode: "lines",
+                    line: {color: 'rgb(152, 251, 152)', width: 0}
+                };
+
+                var data = [min, max, std_dev_lower, std_dev_upper, mean];
+
+                if(values.highres.length > 0) {
+                    var highres = {
+                        name: 'HRES',
+                        x: dates.highres,
+                        y: values.highres,
+                        mode: "lines",
+                        line: {color: 'black'}
+                    };
+
+                    data.push(highres)
+                }
+
+                var layout = {
+                    title: titleCase(watershed) + ' Forecast<br>Reach ID: ' + comid,
+                    xaxis: {title: 'Date'},
+                    yaxis: {title: 'Streamflow m3/s', range: [0, Math.max(...values.max) + Math.max(...values.max)/5]},
+                    //shapes: returnShapes,
+                }
+
+                Plotly.newPlot("graph", data, layout);
+
+                var index = dates.dates.length - 2;
+		console.log(index);
+                getreturnperiods(dates.dates[0], dates.dates[index], watershed, subbasin, comid);
+
+
+                dates.highres = [], dates.dates = [];
+                values.highres = [], values.max = [], values.mean = [], values.min = [], values.std_dev_range_lower = [], values.std_dev_range_upper = [];
+            }
+
+        });;
+
+        return
+    };
+
+
+    function getstreamflow4() {
+        var watershed = "dominican_republic";
+        var subbasin = "national";
+        var comid = "662";
+        var layerUrl = "https://tethys.byu.edu/apps/streamflow-prediction-tool/api/GetForecast/?watershed_name=" + watershed + "&subbasin_name=" + subbasin + "&reach_id=" + comid + "&forecast_folder=most_recent&return_format=csv";
+        esriConfig.request.proxyUrl = "tethys.byu.edu";
+        $.ajax({
+            type: 'GET',
+	        async: false,
+            url: layerUrl,
+            dataType: 'text',
+            contentType: "text/plain",
+            headers: {
+                'Authorization': "Token 2d03550b3b32cdfd03a0c876feda690d1d15ad40"
+            },
+            success: function(data) {
+                if ($('#graph').length) {
+                    Plotly.purge('graph');
+                    $('#graph').remove();
+                };
+
+                $('div .esri-popup__main-container').append('<div id="graph"></div>');
+                var allLines = data.split('\n');
+                var headers = allLines[0].split(',');
+
+                for (var i=1; i < allLines.length; i++) {
+                    var data = allLines[i].split(',');
+
+                    if (headers.includes('high_res (m3/s)')) {
+                        dates.highres.push(data[0]);
+                        values.highres.push(data[1]);
+
+                        if (data[2] !== 'nan') {
+                            dates.dates.push(data[0]);
+                            values.max.push(data[2]);
+                            values.mean.push(data[3]);
+                            values.min.push(data[4]);
+                            values.std_dev_range_lower.push(data[5]);
+                            values.std_dev_range_upper.push(data[6]);
+                        }
+                    } else {
+                        dates.dates.push(data[0]);
+                        values.max.push(data[1]);
+                        values.mean.push(data[2]);
+                        values.min.push(data[3]);
+                        values.std_dev_range_lower.push(data[4]);
+                        values.std_dev_range_upper.push(data[5]);
+                    }
+                }
+            },
+            complete: function() {
+                var mean = {
+                    name: 'Mean',
+                    x: dates.dates,
+                    y: values.mean,
+                    mode: "lines",
+                    line: {color: 'blue'}
+                };
+
+                var max = {
+                    name: 'Max',
+                    x: dates.dates,
+                    y: values.max,
+                    fill: 'tonexty',
+                    mode: "lines",
+                    line: {color: 'rgb(152, 251, 152)', width: 0}
+                };
+
+                var min = {
+                    name: 'Min',
+                    x: dates.dates,
+                    y: values.min,
+                    fill: 'none',
+                    mode: "lines",
+                    line: {color: 'rgb(152, 251, 152)'}
+                };
+
+                var std_dev_lower = {
+                    name: 'Std. Dev. Lower',
+                    x: dates.dates,
+                    y: values.std_dev_range_lower,
+                    fill: 'tonexty',
+                    mode: "lines",
+                    line: {color: 'rgb(152, 251, 152)', width: 0}
+                };
+
+                var std_dev_upper = {
+                    name: 'Std. Dev. Upper',
+                    x: dates.dates,
+                    y: values.std_dev_range_upper,
+                    fill: 'tonexty',
+                    mode: "lines",
+                    line: {color: 'rgb(152, 251, 152)', width: 0}
+                };
+
+                var data = [min, max, std_dev_lower, std_dev_upper, mean];
+
+                if(values.highres.length > 0) {
+                    var highres = {
+                        name: 'HRES',
+                        x: dates.highres,
+                        y: values.highres,
+                        mode: "lines",
+                        line: {color: 'black'}
+                    };
+
+                    data.push(highres)
+                }
+
+                var layout = {
+                    title: titleCase(watershed) + ' Forecast<br>Reach ID: ' + comid,
+                    xaxis: {title: 'Date'},
+                    yaxis: {title: 'Streamflow m3/s', range: [0, Math.max(...values.max) + Math.max(...values.max)/5]},
+                    //shapes: returnShapes,
+                }
+
+                Plotly.newPlot("graph", data, layout);
+
+                var index = dates.dates.length - 2;
+		console.log(index);
+                getreturnperiods(dates.dates[0], dates.dates[index], watershed, subbasin, comid);
+
+
+                dates.highres = [], dates.dates = [];
+                values.highres = [], values.max = [], values.mean = [], values.min = [], values.std_dev_range_lower = [], values.std_dev_range_upper = [];
+            }
+
+        });;
+
+        return
+    };
+
+	
+	
 
     function getreturnperiods(start, end, watershed, subbasin, comid) {
         var layerUrl = "https://tethys.byu.edu/apps/streamflow-prediction-tool/api/GetReturnPeriods/?watershed_name=" + watershed + "&subbasin_name=" + subbasin + "&reach_id=" + comid;
@@ -276,20 +677,13 @@ require([
 		"Rio Coco",
 		"Rio Chepo",
 		"Rio San Juan"
-
 	];
 
 	let content_list = [
 		getstreamflow,
-		
-		"Download the " + "<a href=https://tethys.byu.edu/apps/streamflow-prediction-tool/api/GetForecast/?watershed_name=central_america&subbasin_name=merit&reach_id=927466&forecast_folder=most_recent&return_format=csv>Forecast</a>" +
-		"<br>Download the " + "<a href=https://tethys.byu.edu/apps/streamflow-prediction-tool/api/GetHistoricData/?watershed_name=central_america&subbasin_name=merit&reach_id=926768&return_format=csv>Historic Data</a>",
-
-		"Download the " + "<a href=https://tethys.byu.edu/apps/streamflow-prediction-tool/api/GetForecast/?watershed_name=central_america&subbasin_name=merit&reach_id=929355&forecast_folder=most_recent&return_format=csv>Forecast</a>" +
-		"<br>Download the " + "<a href=https://tethys.byu.edu/apps/streamflow-prediction-tool/api/GetHistoricData/?watershed_name=central_america&subbasin_name=merit&reach_id=929355&return_format=csv>Historic Data</a>",
-
-		"Download the " + "<a href=https://tethys.byu.edu/apps/streamflow-prediction-tool/api/GetForecast/?watershed_name=central_america&subbasin_name=merit&reach_id=928849&forecast_folder=most_recent&return_format=csv>Forecast</a>" +
-		"<br>Download the " + "<a href=https://tethys.byu.edu/apps/streamflow-prediction-tool/api/GetHistoricData/?watershed_name=central_america&subbasin_name=merit&reach_id=928849&return_format=csv>Historic Data</a>",
+		getstreamflow2,
+		getstreamflow3,
+		getstreamflow4
 	]
 
 	for(let i = 0; i < lon_list.length; i++){
