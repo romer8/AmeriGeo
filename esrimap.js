@@ -50,10 +50,7 @@ require([
                 'Authorization': "Token 2d03550b3b32cdfd03a0c876feda690d1d15ad40"
             },
             success: function(data) {
-                if ($('#graph').length) {
-                    Plotly.purge('graph');
-                    $('#graph').remove();
-                };
+
 
                 $('div .esri-popup__main-container').append('<div id="graph"></div>');
                 var allLines = data.split('\n');
@@ -277,14 +274,11 @@ require([
 	let content_list = [
 		getstreamflow("dominican_republic", "national", "951"),
 		
-		"Download the " + "<a href=https://tethys.byu.edu/apps/streamflow-prediction-tool/api/GetForecast/?watershed_name=central_america&subbasin_name=merit&reach_id=927466&forecast_folder=most_recent&return_format=csv>Forecast</a>" +
-		"<br>Download the " + "<a href=https://tethys.byu.edu/apps/streamflow-prediction-tool/api/GetHistoricData/?watershed_name=central_america&subbasin_name=merit&reach_id=926768&return_format=csv>Historic Data</a>",
-
-		"Download the " + "<a href=https://tethys.byu.edu/apps/streamflow-prediction-tool/api/GetForecast/?watershed_name=central_america&subbasin_name=merit&reach_id=929355&forecast_folder=most_recent&return_format=csv>Forecast</a>" +
-		"<br>Download the " + "<a href=https://tethys.byu.edu/apps/streamflow-prediction-tool/api/GetHistoricData/?watershed_name=central_america&subbasin_name=merit&reach_id=929355&return_format=csv>Historic Data</a>",
-
-		"Download the " + "<a href=https://tethys.byu.edu/apps/streamflow-prediction-tool/api/GetForecast/?watershed_name=central_america&subbasin_name=merit&reach_id=928849&forecast_folder=most_recent&return_format=csv>Forecast</a>" +
-		"<br>Download the " + "<a href=https://tethys.byu.edu/apps/streamflow-prediction-tool/api/GetHistoricData/?watershed_name=central_america&subbasin_name=merit&reach_id=928849&return_format=csv>Historic Data</a>",
+		getstreamflow("dominican_republic", "national", "882"),
+		
+		getstreamflow("dominican_republic", "national", "568"),
+		
+		getstreamflow("dominican_republic", "national", "347"),
 	]
 
 	for(let i = 0; i < lon_list.length; i++){
@@ -303,18 +297,10 @@ require([
 				longitude: lon_list[i],
 				latitude: lat_list[i]
 			},
-			if (longitude == "-91.182087") {
-
-			popupTemplate: {
-			    title: name_list[i],
-			    content: getstreamflow("dominican_republic", "national", "951")
-			    }
-			} else {
-			popupTemplate: {
-			title: name_list[i],
-			content: content_list[i]
-			}
-			}
+		        popupTemplate: {
+				title: name_list[i],
+				content: content_list[i]
+            		}
 		});
 	};
 });
