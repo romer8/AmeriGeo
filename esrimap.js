@@ -145,11 +145,12 @@ require([
                     yaxis: {title: 'Streamflow m3/s', range: [0, Math.max(...values.max) + Math.max(...values.max)/5]},
                     //shapes: returnShapes,
                 }
-
+                console.log(data);
                 Plotly.newPlot("graph", data, layout);
 
                 var index = dates.dates.length - 2;
-                console.log(index);
+                console.log(data);
+		console.log(index);
                 getreturnperiods(dates.dates[0], dates.dates[index], watershed, subbasin, comid);
 
 
