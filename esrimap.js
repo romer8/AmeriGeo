@@ -37,7 +37,7 @@ require([
         }
     };
 
-    function getstreamflow(name_list[i]) {
+    function getstreamflow() {
         if (name_list[i] == "Rio Madre Vieja") {
 	var watershed = "dominican_republic";
         var subbasin = "national";
@@ -310,7 +310,7 @@ require([
 			},
 		        popupTemplate: {
 				title: name_list[i],
-				content: getstreamflow(name_list[i])
+				content: getstreamflow()
             		}
 		});
 	};
