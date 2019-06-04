@@ -29,6 +29,13 @@ require([
 
 
     var popupTemplate = new PopupTemplate()
+    view.popup.dockOptions = {
+        buttonEnabled: false,
+        breakpoint: {
+            width: 850,
+            height: 600
+        }
+    };
 
     function getstreamflow() {
         var watershed = "dominican_republic";
@@ -51,7 +58,7 @@ require([
                     $('#graph').remove();
                 };
 
-                $('div .esri-feature__main-container').append('<div id="graph"></div>');
+                $('div .esri-popup__main-container').append('<div id="graph"></div>');
                 var allLines = data.split('\n');
                 var headers = allLines[0].split(',');
 
