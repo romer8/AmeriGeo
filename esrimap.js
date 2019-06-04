@@ -46,7 +46,6 @@ require([
                 'Authorization': "Token 2d03550b3b32cdfd03a0c876feda690d1d15ad40"
             },
             success: function(data) {
-	    	console.log(data);
                 if ($('#graph').length) {
                     Plotly.purge('graph');
                     $('#graph').remove();
