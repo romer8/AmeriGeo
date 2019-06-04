@@ -37,8 +37,8 @@ require([
         }
     };
 
-    function getstreamflow(title) {
-        if (title == "Rio Madre Vieja") {
+    function getstreamflow(name_list[i]) {
+        if (name_list[i] == "Rio Madre Vieja") {
 	var watershed = "dominican_republic";
         var subbasin = "national";
         var comid = "951";}
@@ -310,7 +310,7 @@ require([
 			},
 		        popupTemplate: {
 				title: name_list[i],
-				content: getstreamflow(popupTemplate.title)
+				content: getstreamflow(name_list[i])
             		}
 		});
 	};
