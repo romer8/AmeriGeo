@@ -31,9 +31,9 @@ require([
     var popupTemplate = new PopupTemplate()
 
     function getstreamflow() {
-        var watershed = "central_america";
-        var subbasin = "merit";
-        var comid = "927466";
+        var watershed = "dominican_republic";
+        var subbasin = "national";
+        var comid = "651";
         var layerUrl = "https://tethys.byu.edu/apps/streamflow-prediction-tool/api/GetForecast/?watershed_name=" + watershed + "&subbasin_name=" + subbasin + "&reach_id=" + comid + "&forecast_folder=most_recent&return_format=csv";
         esriConfig.request.proxyUrl = "tethys.byu.edu";
         $.ajax({
@@ -176,7 +176,6 @@ require([
                 'Authorization': "Token 2d03550b3b32cdfd03a0c876feda690d1d15ad40"
             },
             success: function (data) {
-	        console.log(data)
                 var returnPeriods = JSON.parse(data);
 
                 var return_max = parseFloat(returnPeriods["max"]);
