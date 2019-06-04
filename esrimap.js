@@ -280,14 +280,14 @@ require([
 		10.931301
 	];
 
-	let lon_list = [
+	var lon_list = [
 		-91.182087,
 		-84.788530,
 		-79.068260,
 		-84.330854
 	];
 
-	let name_list = [
+	var name_list = [
 		"Rio Madre Vieja",
 		"Rio Coco",
 		"Rio Chepo",
