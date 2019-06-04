@@ -39,8 +39,10 @@ require([
         }
     };
 
-    function getstreamflow(watershed, subbasin, comid) {
-	
+    function getstreamflow() {
+	var watershed = "dominican_republic"
+	var subbasin = "national"
+	var comid = "1132"
     	var layerUrl = "https://tethys.byu.edu/apps/streamflow-prediction-tool/api/GetForecast/?watershed_name=" + watershed + "&subbasin_name=" + subbasin + "&reach_id=" + comid + "&forecast_folder=most_recent&return_format=csv";
         esriConfig.request.proxyUrl = "tethys.byu.edu";
         $.ajax({
@@ -278,9 +280,8 @@ require([
 	];
 
 	let content_list = [
-		"Download the " + "<a href=https://tethys.byu.edu/apps/streamflow-prediction-tool/api/GetForecast/?watershed_name=central_america&subbasin_name=merit&reach_id=927466&forecast_folder=most_recent&return_format=csv>Forecast</a>" +
-		"<br>Download the " + "<a href=https://tethys.byu.edu/apps/streamflow-prediction-tool/api/GetHistoricData/?watershed_name=central_america&subbasin_name=merit&reach_id=926768&return_format=csv>Historic Data</a>",
-
+		getstreamflow,
+		
 		"Download the " + "<a href=https://tethys.byu.edu/apps/streamflow-prediction-tool/api/GetForecast/?watershed_name=central_america&subbasin_name=merit&reach_id=927466&forecast_folder=most_recent&return_format=csv>Forecast</a>" +
 		"<br>Download the " + "<a href=https://tethys.byu.edu/apps/streamflow-prediction-tool/api/GetHistoricData/?watershed_name=central_america&subbasin_name=merit&reach_id=926768&return_format=csv>Historic Data</a>",
 
@@ -292,37 +293,27 @@ require([
 	]
 
 	for(let i = 0; i < lon_list.length; i++){
-            view.graphics.add({
-                symbol: {
-                    type: "text",
-                    color: "#2f5799",
-                    text: "\ue613",
-                    font: {
-                        size: 20,
-                        family: "CalciteWebCoreIcons"
-                    }
-                },
-                geometry: {
-                    type: "point",
-                    longitude: lon_list[i],
-                    latitude: lat_list[i]
-                }
-            });
-                if (lon_list[i] == "-91.182087") {
-                view.graphics.add({
-                    popupTemplate: {
-                        title: name_list[i],
-                        content: getstreamflow("dominican_republic", "national", "1132")
-                    }
-                });
-	            } else {
-                    view.graphics.add({
-                    popupTemplate: {
-                        title: name_list[i],
-                        content: content_list[i]
-                    }
-                });
-	            }
-    };
+		view.graphics.add({
+			symbol: {
+				type: "text",
+				color: "#2f5799",
+				text: "\ue613",
+				font: {
+					size: 20,
+					family: "CalciteWebCoreIcons"
+				}
+			},
+			geometry: {
+				type: "point",
+				longitude: lon_list[i],
+				latitude: lat_list[i]
+			},
+		        popupTemplate: {
+				title: name_list[i],
+				content: content_list[i]
+            		}
+		});
+	};
 });
+
 
