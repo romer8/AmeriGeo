@@ -2,8 +2,6 @@ var map;
 var dates = {highres: [], dates: []}
 var values = {highres: [], max: [], mean: [], min: [], std_dev_range_lower: [], std_dev_range_upper: []};
 var returnShapes;
-var lon_list;
-var name_list;
 
 require([
   "esri/Map",
@@ -20,7 +18,6 @@ require([
   });
 
     esriConfig.request.proxyUrl = "tethys.byu.edu";
-    esriConfig.request.proxyUrl = "ai4e-arcserver.byu.edu";
 
   var view = new MapView({
       container: "viewDiv",
