@@ -312,7 +312,7 @@ require([
                 view.graphics.add({
                     popupTemplate: {
                         title: name_list[i],
-                        content: getstreamflow("dominican_repubilic", "national", "1132")
+                        content: getstreamflow("dominican_republic", "national", "1132")
                     }
                 });
 	            } else {
