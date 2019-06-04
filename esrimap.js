@@ -44,11 +44,20 @@ require([
 		if (name_list[i] == "Rio Madre Vieja") {
 		var watershed = "dominican_republic";
 		var subbasin = "national";
-		var comid = "951";
+		var comid = "1132";
 	} else if (name_list[i] == "Rio Coco") {
 		var watershed = "dominican_republic";
 		var subbasin = "national";
-		var comid = "1309"; }
+		var comid = "1309";
+	} else if (name_list[i] == "Rio Chepo") {
+		var watershed = "dominican_republic";
+		var subbasin = "national";
+		var comid = "859";
+	} else if (name_list[i] == "Rio San Juan") {
+		var watershed = "dominican_republic";
+		var subbasin = "national";
+		var comid = "394";
+	}
 	};
     	var layerUrl = "https://tethys.byu.edu/apps/streamflow-prediction-tool/api/GetForecast/?watershed_name=" + watershed + "&subbasin_name=" + subbasin + "&reach_id=" + comid + "&forecast_folder=most_recent&return_format=csv";
         esriConfig.request.proxyUrl = "tethys.byu.edu";
