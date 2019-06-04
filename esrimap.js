@@ -2,6 +2,8 @@ var map;
 var dates = {highres: [], dates: []}
 var values = {highres: [], max: [], mean: [], min: [], std_dev_range_lower: [], std_dev_range_upper: []};
 var returnShapes;
+var lon_list;
+var name_list;
 
 require([
   "esri/Map",
@@ -38,10 +40,16 @@ require([
     };
 
     function getstreamflow() {
-        if (name_list[i] == "Rio Madre Vieja") {
-	var watershed = "dominican_republic";
-        var subbasin = "national";
-        var comid = "951";}
+	for(let i = 0; i < lon_list.length; i++){
+		if (name_list[i] == "Rio Madre Vieja") {
+		var watershed = "dominican_republic";
+		var subbasin = "national";
+		var comid = "951";
+	} else if (name_list[i] == "Rio Coco") {
+		var watershed = "dominican_republic";
+		var subbasin = "national";
+		var comid = "1309"; }
+	};
     	var layerUrl = "https://tethys.byu.edu/apps/streamflow-prediction-tool/api/GetForecast/?watershed_name=" + watershed + "&subbasin_name=" + subbasin + "&reach_id=" + comid + "&forecast_folder=most_recent&return_format=csv";
         esriConfig.request.proxyUrl = "tethys.byu.edu";
         $.ajax({
