@@ -37,9 +37,9 @@ require([
     };
 
     function getstreamflow() {
-	var watershed = "dominican_republic"
-	var subbasin = "national"
-	var comid = "1132"
+	var watershed = "central_america"
+	var subbasin = "merit"
+	var comid = "927466"
     	var layerUrl = "https://tethys.byu.edu/apps/streamflow-prediction-tool/api/GetForecast/?watershed_name=" + watershed + "&subbasin_name=" + subbasin + "&reach_id=" + comid + "&forecast_folder=most_recent&return_format=csv";
         esriConfig.request.proxyUrl = "tethys.byu.edu";
         $.ajax({
@@ -169,9 +169,9 @@ require([
     };
     
     function getstreamflow2() {
-        var watershed = "dominican_republic";
-        var subbasin = "national";
-        var comid = "1003";
+	var watershed = "central_america"
+	var subbasin = "merit"
+	var comid = "926768"
         var layerUrl = "https://tethys.byu.edu/apps/streamflow-prediction-tool/api/GetForecast/?watershed_name=" + watershed + "&subbasin_name=" + subbasin + "&reach_id=" + comid + "&forecast_folder=most_recent&return_format=csv";
         esriConfig.request.proxyUrl = "tethys.byu.edu";
         $.ajax({
@@ -302,9 +302,9 @@ require([
 
 
     function getstreamflow3() {
-        var watershed = "dominican_republic";
-        var subbasin = "national";
-        var comid = "959";
+	var watershed = "central_america"
+	var subbasin = "merit"
+	var comid = "928849"
         var layerUrl = "https://tethys.byu.edu/apps/streamflow-prediction-tool/api/GetForecast/?watershed_name=" + watershed + "&subbasin_name=" + subbasin + "&reach_id=" + comid + "&forecast_folder=most_recent&return_format=csv";
         esriConfig.request.proxyUrl = "tethys.byu.edu";
         $.ajax({
@@ -435,9 +435,9 @@ require([
 
 
     function getstreamflow4() {
-        var watershed = "dominican_republic";
-        var subbasin = "national";
-        var comid = "662";
+	var watershed = "central_america"
+	var subbasin = "merit"
+	var comid = "929355"
         var layerUrl = "https://tethys.byu.edu/apps/streamflow-prediction-tool/api/GetForecast/?watershed_name=" + watershed + "&subbasin_name=" + subbasin + "&reach_id=" + comid + "&forecast_folder=most_recent&return_format=csv";
         esriConfig.request.proxyUrl = "tethys.byu.edu";
         $.ajax({
