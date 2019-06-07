@@ -26,7 +26,6 @@ require([
       zoom: 5
   });
 
-
     var popupTemplate = new PopupTemplate()
     view.popup.dockOptions = {
         buttonEnabled: false,
