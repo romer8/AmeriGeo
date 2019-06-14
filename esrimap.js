@@ -302,7 +302,7 @@ require([
 		secondriver,
 		thirdriver,
 		fourthriver
-	]
+	];
 
 	for(let i = 0; i < lon_list.length; i++){
 		view.graphics.add({
