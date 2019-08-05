@@ -22,8 +22,8 @@ require([
   var view = new MapView({
       container: "viewDiv",
       map: map,
-      center: [-87, 13],
-      zoom: 5
+      center: [-70, -10],
+      zoom: 3
   });
 
     var popupTemplate = new PopupTemplate()
@@ -35,30 +35,47 @@ require([
         }
     };
 
-    function firstriver() {
-        var comid = "927466";
+     function firstriver() {
+        var comid = "150492";
         getstreamflow(comid);
     };
 
-    function secondriver() {
-        var comid = "926768";
+     function secondriver() {
+        var comid = "177865";
         getstreamflow(comid);
     };
 
-    function thirdriver() {
-        var comid = "928849";
+     function thirdriver() {
+        var comid = "140220";
+        getstreamflow(comid);
+    };
+     function fourthriver() {
+        var comid = "178123";
+        getstreamflow(comid);
+    };
+     function fifthriver() {
+        var comid = "160967";
         getstreamflow(comid);
     };
 
-    function fourthriver() {
-        var comid = "929355";
+      function sixthriver() {
+        var comid = "176020";
         getstreamflow(comid);
     };
+      function seventhriver() {
+        var comid = "185439";
+        getstreamflow(comid);
+    };
+      function eightthriver() {
+        var comid = "166150";
+        getstreamflow(comid);
+    };
+
 
 
     function getstreamflow(comid) {
-        var watershed = "central_america";
-        var subbasin = "merit";
+        var watershed = "south_america";
+        var subbasin = "continental";
         var comid;
     	var layerUrl = "https://tethys.byu.edu/apps/streamflow-prediction-tool/api/GetForecast/?watershed_name=" + watershed + "&subbasin_name=" + subbasin + "&reach_id=" + comid + "&forecast_folder=most_recent&return_format=csv";
         esriConfig.request.proxyUrl = "tethys.byu.edu";
@@ -277,31 +294,48 @@ require([
 
 
 	let lat_list = [
-		14.414071,
-		14.803385,
-		9.122188,
-		10.931301
+		-5.713343,
+		-23.599377,
+		0.234906,
+		-23.428544,
+		-8.846648,
+		-21.855075,
+		-32.501466,
+		-14.115203
 	];
 
 	let lon_list = [
-		-91.182087,
-		-84.788530,
-		-79.068260,
-		-84.330854
+		-78.675835,
+		-54.030787,
+	    -75.965563,
+	    -63.587962,
+	    -49.636322,
+	    -69.515510,
+	    -55.663173,
+	    -67.512691
 	];
 
 	let name_list = [
-		"Rio Madre Vieja",
-		"Rio Coco",
-		"Rio Chepo",
-		"Rio San Juan"
+		"Río Marañón ",
+		"Río Paraná",
+		"Río Putumayo",
+	    "Río Bermejo",
+	    "Río Araguaia",
+	    "Río Loa",
+	    "Río Negro",
+	    "Río Beni"
+
 	];
 
 	let content_list = [
 		firstriver,
 		secondriver,
 		thirdriver,
-		fourthriver
+		fourthriver,
+		fifthriver,
+		sixthriver,
+		seventhriver,
+		eightthriver
 	];
 
 	for(let i = 0; i < lon_list.length; i++){
