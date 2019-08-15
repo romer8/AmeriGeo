@@ -66,10 +66,10 @@ require([
         var comid = "185439";
         getstreamflow(comid);
     };
-      function eightthriver() {
-        var comid = "148750";
-        getstreamflow(comid);
-    };
+//      function eightthriver() {
+//        var comid = "148750";
+//        getstreamflow(comid);
+//    };
 
 
 
@@ -301,7 +301,7 @@ require([
 		-8.846648,
 		-21.855075,
 		-32.501466,
-	    -5.052363
+//	    -5.052363
 	];
 	let lon_list = [
 	    -67.512691,
@@ -311,7 +311,7 @@ require([
 	    -49.636322,
 	    -69.515510,
 	    -55.663173,
-	    -75.989515
+//	    -75.989515
 	];
 	let name_list = [
 
@@ -322,7 +322,7 @@ require([
 	    "Río Araguaia",
 	    "Río Loa",
 	    "Río Negro",
-	    "Río Marañón"
+//	    "Río Marañón"
 	];
 	let content_list = [
 		firstriver,
@@ -332,7 +332,7 @@ require([
 		fifthriver,
 		sixthriver,
 		seventhriver,
-		eightthriver
+//		eightthriver
 	];
 
 	for(let i = 0; i < lon_list.length; i++){
